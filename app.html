@@ -1,0 +1,81 @@
+<div id="app">
+  {{ message }}
+</div>
+<hr>
+
+<div id="app1">
+  <span v-bind:title="message">
+    鼠标悬停几秒
+  </span>
+</div>
+<hr>
+
+<div id="app2">
+  <p v-if="seen">现在你看到了</p>
+</div>
+<hr>
+
+<div id="app3">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+<hr>
+
+<div id="app4">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+<hr>
+
+<div id="app5">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+<hr>
+
+<div id="app6">
+  <ol>
+    <todo-item></todo-item>
+    <todo-item></todo-item>
+  </ol>
+</div>
+<hr>
+
+<div id="app7">
+  <ol>
+    <todo-item-v v-for="item in list" v-bind:todo="item"></todo-item-v>
+  </ol>
+</div>
+<hr>
+
+<div id="app8">
+  <div v-if="message > 0.5">
+    now you see {{ message }}
+  </div>
+  <div v-else>
+    now you don't {{ message }}
+  </div>
+  <div v-show="message > 0.5">
+    Hello {{ message }}!
+  </div>
+</div>
+<hr>
+
+<div id="app9">
+  <button v-on:click="counter += 1">+1</button>
+  <p>这个按钮点击了{{ counter }}次</p>
+</div>
+<hr>
+
+<div id="app10">
+  <button v-if="show" v-on:click="greet(false)">Hidden</button>
+  <button v-else v-on:click="greet(true)">Greet</button>
+  <p v-if="show">hello Vue</p>
+</div>
+<hr>
+
+<script src="http://vuejs.org/js/vue.js"></script>
+<script src="app.js"></script>
